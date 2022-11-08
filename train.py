@@ -86,10 +86,14 @@ for epoch in range(cfg.TRAIN.NUM_EPOCHS):
 
     acc, C_norm = validate(model, test_data, label_dict, emb_database, label_database)
 
-    print("Epoch %d" %(epoch))
-    print(acc)
+    print("Epoch %d: %f" %(epoch, acc))
 
-    #TODO: Save the model and other files
+    if acc > best_acc:
+        best_acc = acc
+        torch.save(model.state_dict(), model_path)
+        with open(os.path.join(cfg.MODEL.CHECKPOINT_DIR,'label_dict.pkl'), 'wb') as f:
+            pickle.dump(label_dict,f)
+        print("Model saved")
 
 print("Training finished")
 

@@ -22,9 +22,9 @@ _C.MODEL.EXPERIMENT = 'network.pth'
 ###Dataset parameters###
 _C.DATASET = CN()
 #ID map path
-_C.DATASET.ID_MAP_PATH = 'data/data.csv'
+_C.DATASET.ID_MAP_PATH = 'data/cifar10.csv'
 #Dataset path
-_C.DATASET.DATASET_PATH = 'PATH TO DATASET' 
+_C.DATASET.DATASET_PATH = 'data/CIFAR-10-images/train' 
 #Fraction of data for validation
 _C.DATASET.VAL_SIZE = 0.2
 #Image size
@@ -51,14 +51,16 @@ _C.TRAIN.LEARNING_RATE = 0.0002
 #False negative ratio
 _C.TRAIN.FNR = 0.3
 #Maximum number of allowed clusters
-_C.TRAIN.MAX_CLUSTERS = 3
+_C.TRAIN.MAX_CLUSTERS = 5
 
 ###Inference parameters###
 _C.INF = CN()
 #Path to ID test dataset
-_C.INF.ID_TEST_DATASET = 'PATH TO ID DATASET'
+_C.INF.ID_TEST_DATASET = 'data/CIFAR-10-images/test'
 #Path to OOD dataset
-_C.INF.OOD_TEST_DATASET = 'PATH TO OOD DATASET'
+_C.INF.OOD_TEST_DATASET = 'data/CIFAR-10-images/test'
+#OOD ID map
+_C.INF.OOD_ID_MAP_PATH = 'data/data_ood.csv'
 #Threshold on explained variance cumsum
 _C.INF.EXP_VAR_THRESHOLD = 0.95
 #Number of bins for calibration plot

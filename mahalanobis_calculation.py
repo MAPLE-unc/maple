@@ -32,6 +32,7 @@ model.eval()
 
 #Load the data
 id_map = utils.get_id_map(cfg.DATASET.ID_MAP_PATH)
+ood_id_map = utils.get_id_map(cfg.INF.OOD_ID_MAP_PATH)
 
 train_X, train_y, _ = utils.get_dataset(cfg.DATASET.DATASET_PATH, id_map)
 train_data_loader = load_dataset.LoadDataset(train_X, train_y)
@@ -41,7 +42,7 @@ id_X, id_y, _ = utils.get_dataset(cfg.INF.ID_TEST_DATASET, id_map)
 id_data_loader = load_dataset.LoadDataset(id_X, id_y)
 id_data = data.DataLoader(id_data_loader, batch_size=cfg.TRAIN.BATCH_SIZE, shuffle=False, num_workers=cfg.SYSTEM.NUM_WORKERS)
 
-ood_X, ood_y, _ = utils.get_dataset(cfg.INF.OOD_TEST_DATASET, id_map)
+ood_X, ood_y, _ = utils.get_dataset(cfg.INF.OOD_TEST_DATASET, ood_id_map)
 ood_data_loader = load_dataset.LoadDataset(ood_X, ood_y)
 ood_data = data.DataLoader(ood_data_loader, batch_size=cfg.TRAIN.BATCH_SIZE, shuffle=False, num_workers=cfg.SYSTEM.NUM_WORKERS)
 
@@ -70,7 +71,8 @@ id_pred_prob = md_utils.get_md_prob(id_md_matrix, num_eig)
 
 #ID Metrics
 pred_class = np.argmin(id_md_matrix, axis=1)
-accuracy = metrics.get_accuracy(pred_class, id_label) 
+actual_pred_class = [label_dict[k] for k in pred_class]
+accuracy = metrics.get_accuracy(actual_pred_class, id_label) 
 print("Accuracy: %f" %(accuracy))
 ece = metrics.get_expected_calibration_error(id_pred_prob, id_label, num_bins=cfg.INF.NUM_BINS)
 print("ECE score: %f" %(ece))
