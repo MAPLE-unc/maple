@@ -33,6 +33,7 @@ To launch the training, run
 ```
 python3 train.py
 ```
+The code automatically splits the dataset into train and validation. 
 
 ## Inference
 To launch the inference, run
