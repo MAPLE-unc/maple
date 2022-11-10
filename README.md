@@ -11,5 +11,7 @@ To be updated
 
 The hyperparameters and arguments needed for training the network are available in `config.py`.
 To launch the training, run 
-```python3 train.py```
+```
+python3 train.py
+```
 
