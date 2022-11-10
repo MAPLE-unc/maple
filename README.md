@@ -5,7 +5,7 @@ Code to train a classifier using MAPLE and estimate the uncertainty of predictio
 
 ## Data structure
 
-To be updated
+The dataset should be arranged such that each class has a directory with the corresponding images placed in them.
 
 ## Training
 
