@@ -21,6 +21,7 @@ The dataset should be arranged such that each class has a directory with the cor
 │   │   ├── classN
 
 ```
+The dataset paths should be included in the `config.py`.  
 
 
 ## Training
