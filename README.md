@@ -3,7 +3,7 @@
 Code for Mahalanobis-Distance-based Uncertainty Prediction for Reliable Classification
   
 
-## Data structure
+## Dataset
 
 The dataset is arranged such that each class has a directory with the corresponding images placed in them. An example directory structure is shown below.
 
