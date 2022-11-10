@@ -7,6 +7,7 @@ Code to train a classifier using MAPLE and estimate the uncertainty of predictio
 
 The dataset should be arranged such that each class has a directory with the corresponding images placed in them.
 
+.
 +-- _config.yml
 +-- _drafts
 |   +-- begin-with-the-crazy-ideas.textile
