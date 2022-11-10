@@ -5,17 +5,20 @@ Code to train a classifier using MAPLE and estimate the uncertainty of predictio
 
 ## Data structure
 
-The dataset should be arranged such that each class has a directory with the corresponding images placed in them.
+The dataset should be arranged such that each class has a directory with the corresponding images placed in them. An example directory structure is shown below.
 
 ```bash
 ├── dataset
 │   ├── train
 │   │   ├── class1
 │   │   ├── class2
-              .
-              .
-              .
-    │   ├── classN
+...
+│   │   ├── classN
+│   ├── test
+│   │   ├── class1
+│   │   ├── class2
+...
+│   │   ├── classN
 
 ```
 
