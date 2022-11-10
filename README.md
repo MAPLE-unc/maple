@@ -11,11 +11,11 @@ The dataset should be arranged such that each class has a directory with the cor
 ├── dataset
 │   ├── train
 │   │   ├── class1
-│   |   ├── class2
+│   │   ├── class2
               .
               .
               .
-    |   ├── classN
+    │   ├── classN
 
 ```
 
