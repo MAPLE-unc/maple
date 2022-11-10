@@ -23,7 +23,7 @@ The dataset is arranged such that each class has a directory with the correspond
 ```
 Each dataset is followed by a csv file containing the class name and the corresponding classification label. An example for CIFAR10 is given in `data/cifar10.csv`.
 
-The dataset paths should be included in the `config.py`.  
+The dataset paths and the id paths (csv files) should be included in the `config.py`. 
 
 
 ## Training
@@ -33,4 +33,12 @@ To launch the training, run
 ```
 python3 train.py
 ```
+
+## Inference
+To launch the inference, run
+```
+python3 mahalanobis_calculation.py
+```
+This calculates the Mahalanobis distance and the prediction probability for both the in distribution and out of distribution dataset, and computes the metrics.
+
 
