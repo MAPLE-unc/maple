@@ -14,7 +14,7 @@ The dataset should be arranged such that each class has a directory with the cor
 │   │   ├── class2
 ...
 │   │   ├── classN
-│   ├── test
+│   ├── test1
 │   │   ├── class1
 │   │   ├── class2
 ...
