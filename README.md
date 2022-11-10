@@ -1,6 +1,6 @@
 # MAPLE
 
-Code to train a classifier using MAPLE and estimate the uncertainty of prediction using Mahalanobis distance.
+Code for Mahalanobis-Distance-based Uncertainty Prediction for Reliable Classification
   
 
 ## Data structure
