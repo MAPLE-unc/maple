@@ -9,12 +9,12 @@ The dataset should be arranged such that each class has a directory with the cor
 
 ```bash
 ├── dataset
-│   ├── train
+│   ├── train_data
 │   │   ├── class1
 │   │   ├── class2
 ...
 │   │   ├── classN
-│   ├── test1
+│   ├── test_data
 │   │   ├── class1
 │   │   ├── class2
 ...
