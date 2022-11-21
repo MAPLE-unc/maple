@@ -37,7 +37,7 @@ def mahalanobis(x, pc, label):
         feats = pc[index_i].squeeze(1)
         mean = np.mean(feats,axis=0)
         x_minus_mu = x - np.mean(feats, axis=0)
-        cov = np.cov(feats.T) + np.diag([1e-20]*num_eig)
+        cov = np.cov(pc.T) + np.diag([1e-20]*num_eig)
         inv_cov = sp.linalg.inv(cov)
         left_term = np.dot(x_minus_mu, inv_cov)
         mahal = np.dot(left_term, x_minus_mu.T)
