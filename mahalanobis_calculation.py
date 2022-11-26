@@ -34,7 +34,7 @@ model.eval()
 id_map = utils.get_id_map(cfg.DATASET.ID_MAP_PATH)
 ood_id_map = utils.get_id_map(cfg.INF.OOD_ID_MAP_PATH)
 
-train_X, train_y, _ = utils.get_dataset(cfg.DATASET.DATASET_PATH, id_map)
+train_X, train_y = np.load(os.path.join(checkpoint, 'train_img_list.npy')), np.load(os.path.join(checkpoint, 'train_label_list.npy'))
 train_data_loader = load_dataset.LoadDataset(train_X, train_y)
 train_data = data.DataLoader(train_data_loader, batch_size=cfg.TRAIN.BATCH_SIZE, shuffle=False, num_workers=cfg.SYSTEM.NUM_WORKERS)
 
