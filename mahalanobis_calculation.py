@@ -84,8 +84,8 @@ ood_md_matrix = md_utils.mahalanobis(transformed_ood_data, pc, train_label)
 ood_pred_prob = md_utils.get_md_prob(ood_md_matrix, num_eig)
 
 
-unc_in = 1 - np.max(id_pred_prob)
-unc_out = 1 - np.max(ood_pred_prob)
+unc_in = 1 - np.max(id_pred_prob, axis=1)
+unc_out = 1 - np.max(ood_pred_prob, axis=1)
 auroc = metrics.get_auroc_score(unc_in, unc_out)
 print("AUROC: %f" %(auroc))
 
