@@ -91,6 +91,8 @@ for epoch in range(cfg.TRAIN.NUM_EPOCHS):
     if acc > best_acc:
         best_acc = acc
         torch.save(model.state_dict(), model_path)
+        np.save(os.path.join(cfg.MODEL.CHECKPOINT_DIR,'train_img_list.npy'), img_list)
+        np.save(os.path.join(cfg.MODEL.CHECKPOINT_DIR,'train_label_list.npy'), label_list)
         with open(os.path.join(cfg.MODEL.CHECKPOINT_DIR,'label_dict.pkl'), 'wb') as f:
             pickle.dump(label_dict,f)
         print("Model saved")
