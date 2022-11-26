@@ -33,7 +33,7 @@ def get_expected_calibration_error(y_pred, y_true, num_bins=15):
 def get_auroc_score(unc_in, unc_out):
     in_labels = np.zeros(unc_in.shape)
     ood_labels = np.ones(unc_out.shape)
-    return roc_auc_score((in_labels, ood_labels), (unc_in, unc_out))
+    return roc_auc_score(np.concatenate(in_labels, ood_labels), np.concatenate(unc_in, unc_out))
     
 
 
