@@ -43,6 +43,9 @@ test_data = data.DataLoader(test_data_loader, batch_size=cfg.TRAIN.BATCH_SIZE, s
 label_dict = {}
 for i in range(n_classes):
     label_dict[i] = i
+    
+img_list = X_train.copy()
+label_list = y_train.copy()
 
     
 #Model
